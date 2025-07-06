@@ -12,8 +12,8 @@
     "baseUrl": "./playwright",
     "paths": {
       "@pages/*": ["pages/*"],
-      "@/support/*": ["support/*"],
-      "@/builder/*": ["support/builder/*"],
+      "@support/*": ["support/*"],
+      "@builder/*": ["support/builder/*"],
       "@fixtures/*": ["fixtures/*"]
     },
     "types": ["node", "@playwright/test"]

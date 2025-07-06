@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 class PortfolioPage {
     private readonly page: Page;
@@ -69,7 +69,7 @@ class PortfolioPage {
     }
 
     public getEditProfileModalLastColorButton(): Locator {
-        return this.getColorsSectionButtons().last()
+        return this.getColorsSectionButtons().last();
     }
 
     public getEditProfileModalLastColorButtonSelected(): Locator {
