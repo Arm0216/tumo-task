@@ -22,11 +22,11 @@ jobs:
             - run:
                   name: Run Playwright Tests
                   command: npm run test-e2e:all
-                        - store_artifacts:
-                      path: playwright-report
-                      destination: playwright-report
-                      when: always
             - store_artifacts:
-                      path: test-results
-                      destination: test-results
-                      when: always
+                  path: playwright-report
+                  destination: playwright-report
+                  when: always
+            - store_artifacts:
+                  path: test-results
+                  destination: test-results
+                  when: always
