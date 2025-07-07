@@ -1,26 +1,32 @@
 version: 2.1
 orbs:
-  circleci-cli: circleci/circleci-cli@0.1.9
+    circleci-cli: circleci/circleci-cli@0.1.9
 on:
-  pull_request:
-    types: [opened,reopened]
+    pull_request:
+        types: [opened, reopened]
 jobs:
-  build:
-    docker:
-      - image: mcr.microsoft.com/playwright:v1.53.2-jammy
-    working_directory: ~/repo
-    steps:
-      - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+    build:
+        docker:
+            - image: mcr.microsoft.com/playwright:v1.53.2-jammy
+        working_directory: ~/repo
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+                      - v1-dependencies-
 
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Run Playwright Tests
-          command: npm run test-e2e:all
+            - run:
+                  name: Install Dependencies
+                  command: npm install
+            - run:
+                  name: Run Playwright Tests
+                  command: npm run test-e2e:all
+                        - store_artifacts:
+                      path: playwright-report
+                      destination: playwright-report
+                      when: always
+            - store_artifacts:
+                      path: test-results
+                      destination: test-results
+                      when: always
