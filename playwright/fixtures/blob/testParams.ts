@@ -1,0 +1,1 @@
+export const INVALID_FILE_TYPES: string[] = ['mp4', 'pdf' ];

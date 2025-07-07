@@ -1,19 +1,25 @@
 {
-  "name": "playwright-task",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "prettier-fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@faker-js/faker": "^9.9.0",
-    "@playwright/test": "^1.53.2",
-    "@types/node": "^24.0.10",
-    "dotenv": "^17.0.1",
-    "prettier": "3.6.2"
-  }
+    "name": "playwright-task",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "prettier-fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+        "test-e2e": "playwright test playwright/tests/e2e",
+        "test-e2e:ui": "playwright test playwright/tests/e2e --ui",
+        "test-e2e:debug": "playwright test playwright/tests/e2e --debug",
+        "test-e2e:auth": "playwright test playwright/tests/e2e/portfolio/auth.spec.ts --workers=5",
+        "test-e2e:portfolio": "playwright test playwright/tests/e2e/portfolio/portfolio.spec.ts --workers=1",
+        "test-e2e:all": "npm run test-e2e:auth && npm run test-e2e:portfolio"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@faker-js/faker": "^9.9.0",
+        "@playwright/test": "^1.53.2",
+        "@types/node": "^24.0.10",
+        "dotenv": "^17.0.1",
+        "prettier": "3.6.2"
+    }
 }

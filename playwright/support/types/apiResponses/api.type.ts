@@ -1,0 +1,1 @@
+type API_METHODS = 'get' | 'post' | 'put' | 'delete' | 'patch';

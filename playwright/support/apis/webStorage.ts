@@ -1,4 +1,4 @@
-import { BrowserContext } from "@playwright/test";
+import { BrowserContext } from '@playwright/test';
 
 class WebStorage {
     private readonly context: BrowserContext;
@@ -13,10 +13,9 @@ class WebStorage {
         `);
     }
 
-    public async getLocalStorage(key: string) {
-        return await this.context.addInitScript(`
-            window.localStorage.getItem('${key}');
-        `);
+    public async getLocalStorage(key: string): Promise<string | null> {
+        const page = this.context.pages()[0];
+        return await page.evaluate(key => window.localStorage.getItem(key), key);
     }
 }
 

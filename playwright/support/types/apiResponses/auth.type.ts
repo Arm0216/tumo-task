@@ -5,5 +5,5 @@ type LOGIN_RESPONSE = {
         id: string;
         username: string;
         email: string;
-    }
-}
+    };
+};
