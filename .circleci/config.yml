@@ -23,4 +23,4 @@ jobs:
           command: npm install
       - run:
           name: Run Playwright Tests
-          command: npm test
+          command: npm run test-e2e:all
