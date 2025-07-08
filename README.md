@@ -66,6 +66,7 @@ playwright-task/
    Create a `.env` file in the root directory:
     ```env
     BASE_URL=base_url
+    AUTH_API='https://portfolio-api.1.tumo.dev'
     USER_NAME=your_username
     PASSWORD=your_password
     ```
