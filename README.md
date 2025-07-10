@@ -38,7 +38,7 @@ playwright-task/
 
 ### Prerequisites
 
-- Node.js (LTS version)
+- Node.js (V20.19.0)
 - npm or yarn package manager
 
 ### Installation Steps
@@ -47,7 +47,6 @@ playwright-task/
 
     ```bash
     git clone <repository-url>
-    cd playwright-task
     ```
 
 2. **Install dependencies**
@@ -65,7 +64,7 @@ playwright-task/
 4. **Environment Configuration**
    Create a `.env` file in the root directory:
     ```env
-    BASE_URL=base_url
+    BASE_URL='https://tumo-portfolio.pages.dev'
     AUTH_API='https://portfolio-api.1.tumo.dev'
     USER_NAME=your_username
     PASSWORD=your_password
